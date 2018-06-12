@@ -15,3 +15,6 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+# Added the following rules because of the InnerClass annotations are missing error
+-keepattributes *Annotation*
+-keep @**annotation** class * {*;}
