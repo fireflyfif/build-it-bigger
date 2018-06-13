@@ -45,6 +45,9 @@ dependencies {
     // Dependency to the Joke supplying Java library
     implementation project(':joke')
 
+    // Dependency to the Joke displaying Android library
+    implementation project(':joker')
+
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
