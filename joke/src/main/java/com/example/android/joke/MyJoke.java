@@ -22,4 +22,5 @@ public class MyJoke {
 
         return randomJoke;
     }
+
 }

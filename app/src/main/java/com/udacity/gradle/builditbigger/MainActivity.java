@@ -63,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
         MyJoke myJoke = new MyJoke();
         String jokeString = myJoke.getJoke();
 
-
         Intent intent = new Intent(this, JokeLibraryActivity.class);
         intent.putExtra(JOKE_KEY, jokeString);
         startActivity(intent);
@@ -81,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
             if (myApiService == null) {
                 MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                         new AndroidJsonFactory(), null)
-                        .setRootUrl("http://10.0.2.2:8080/_ah/api/")
+                        .setRootUrl("http://192.168.11.150:8080/_ah/api/")
                         .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                             @Override
                             public void initialize(AbstractGoogleClientRequest<?> request) throws IOException {
@@ -107,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
+
             Toast.makeText(context, result, Toast.LENGTH_LONG).show();
         }
     }
