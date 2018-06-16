@@ -11,8 +11,8 @@
         android:id="@+id/display_joke_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="@dimen/padding_6dp"
+        android:fontFamily="serif-monospace"
+        android:padding="@dimen/padding_10dp"
         android:text="@string/display_joke_library"/>
 
 </LinearLayout>

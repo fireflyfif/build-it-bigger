@@ -16,12 +16,12 @@ public class JokeLibraryActivity extends AppCompatActivity {
 
         TextView displayedJokeFromJavaLib = findViewById(R.id.display_joke_tv);
 
-        /*Intent receiveIntent = getIntent();
+        Intent receiveIntent = getIntent();
         if (receiveIntent.hasExtra(JOKE_KEY)) {
             String joke = receiveIntent.getStringExtra(JOKE_KEY);
 
             displayedJokeFromJavaLib.setText(joke);
-        }*/
+        }
 
     }
 }
