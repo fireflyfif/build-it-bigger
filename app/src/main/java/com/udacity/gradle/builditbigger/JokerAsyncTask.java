@@ -30,7 +30,6 @@ public class JokerAsyncTask extends AsyncTask<Pair<Context, String>, Void, Strin
      * Method for checking if the tested device is an emulator
      *
      * recourse: https://stackoverflow.com/a/21505193/8132331
-     *
      * @return boolean whether the build is being performed on an Emulator
      */
     public static boolean checkIsEmulator() {
@@ -63,7 +62,6 @@ public class JokerAsyncTask extends AsyncTask<Pair<Context, String>, Void, Strin
      * Method for getting the local IP Address of the used
      *
      * resource: https://stackoverflow.com/a/10199498/8132331
-     *
      * @return String with the IP address
      */
     private static String getLocalIpAddress() {
@@ -114,11 +112,11 @@ public class JokerAsyncTask extends AsyncTask<Pair<Context, String>, Void, Strin
 
     @Override
     protected String doInBackground(Pair<Context, String>... params) {
+
         if (myApiService == null) {
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
-                    .setRootUrl("http://10.0.2.2:8080/_ah/api/")
-                    //.setRootUrl(getIpAddress())
+                    .setRootUrl(getIpAddress())
                     .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                         @Override
                         public void initialize(AbstractGoogleClientRequest<?> request) throws IOException {
