@@ -37,6 +37,7 @@ dependencies {
 }
 
 appengine {
+    //tools.cloudSdkHome = 'Users/fifiv/AppData/Local/Google/Cloud SDK/google-cloud-sdk'
     run {
         host = "0.0.0.0"
     }
