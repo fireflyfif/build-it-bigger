@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import com.example.android.joker.JokeLibraryActivity;
 
+import java.util.ArrayList;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -54,21 +56,20 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(String joke) {
                         Intent intent = new Intent(getApplicationContext(), JokeLibraryActivity.class);
-
-                        Log.d(LOG_TAG, "Passed joke: " + joke);
-
                         intent.putExtra(JOKE_KEY, joke);
                         startActivity(intent);
+
+                        Log.d(LOG_TAG, "Passed joke: " + joke);
                     }
 
                     @Override
                     public void onFailure(Exception e) {
+
                         Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
                     }
                 });
         jokerAsyncTask.execute();
 
-        //Toast.makeText(this, jokeString, Toast.LENGTH_SHORT).show();
     }
 
 }

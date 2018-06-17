@@ -25,7 +25,7 @@
    "id": "myApi.jokerMe",
    "path": "jokerMe",
    "response": {
-    "$ref": "MyBean"
+    "$ref": "MyJokesClass"
    },
    "scopes": [
     "https://www.googleapis.com/auth/userinfo.email"
@@ -83,10 +83,10 @@
  "protocol": "rest",
  "rootUrl": "https://myApplicationId.appspot.com/_ah/api/",
  "schemas": {
-  "MyBean": {
-   "id": "MyBean",
+  "MyJokesClass": {
+   "id": "MyJokesClass",
    "properties": {
-    "data": {
+    "jokes": {
      "type": "string"
     }
    },
