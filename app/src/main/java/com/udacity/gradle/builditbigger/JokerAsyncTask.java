@@ -11,7 +11,6 @@ import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import static com.udacity.gradle.builditbigger.utils.GetIpAddress.getIpAddress;
 
@@ -62,10 +61,6 @@ public class JokerAsyncTask extends AsyncTask<Void, Void, String> {
 
             try {
                 String jokeDisplayed = myApiService.jokerMe().execute().getJokes();
-//                ArrayList<String> jokeList = new ArrayList<>();
-//                jokeList = (ArrayList<String>) myApiService.jokerMe().execute().getJokes();
-
-                //jokeList.add(jokeDisplayed);
 
                 Log.d(LOG_TAG, "Passed joke: " + jokeDisplayed);
 

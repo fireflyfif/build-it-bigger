@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">joker</string>
     <string name="display_joke_library">Display a joke passed as an intent extra.</string>
+    <string name="get_new_joke">Get me new joke button.</string>
 </resources>

@@ -1,0 +1,23 @@
+Warning: Google App Engine Java 7 runtime is deprecated.
+Warning: See https://cloud.google.com/appengine/docs/deprecations/java7
+Jun 17, 2018 7:07:13 PM java.util.prefs.WindowsPreferences <init>
+WARNING: Could not open/create prefs root node Software\JavaSoft\Prefs at root 0x80000002. Windows RegCreateKeyEx(...) returned error code 5.
+Jun 17, 2018 7:07:13 PM com.google.appengine.tools.development.SystemPropertiesManager setSystemProperties
+INFO: Overwriting system property key 'java.util.logging.config.file', value 'C:\Users\fifiv\AppData\Local\Google\Cloud SDK\google-cloud-sdk\platform\google_appengine\google\appengine\tools\java\config\sdk\logging.properties' with value 'WEB-INF/logging.properties' from 'C:\Users\fifiv\AndroidStudioProjects\Android Dev Nanodegree\Projects\ud867_gradle\FinalProject\backend\build\exploded-backend\WEB-INF\appengine-web.xml'
+Jun 17, 2018 7:07:13 PM com.google.apphosting.utils.jetty.JettyLogger info
+INFO: Logging to JettyLogger(null) via com.google.apphosting.utils.jetty.JettyLogger
+Jun 17, 2018 5:07:14 PM com.google.appengine.tools.development.IsolatedAppClassLoader checkWorkingDirectory
+WARNING: Your working directory, (C:\Users\fifiv\AndroidStudioProjects\Android Dev Nanodegree\Projects\ud867_gradle\FinalProject\backend) is not equal to your 
+web application root (C:\Users\fifiv\AndroidStudioProjects\Android Dev Nanodegree\Projects\ud867_gradle\FinalProject\backend\build\exploded-backend)
+You will not be able to access files from your working directory on the production server.
+
+Jun 17, 2018 5:07:14 PM com.google.apphosting.utils.jetty.JettyLogger info
+INFO: jetty-6.1.x
+Jun 17, 2018 5:07:15 PM com.google.apphosting.utils.jetty.JettyLogger info
+INFO: Started SelectChannelConnector@0.0.0.0:8080
+Jun 17, 2018 5:07:15 PM com.google.appengine.tools.development.AbstractModule startup
+INFO: Module instance default is running at http://localhost:8080/
+Jun 17, 2018 5:07:15 PM com.google.appengine.tools.development.AbstractModule startup
+INFO: The admin console is running at http://localhost:8080/_ah/admin
+Jun 17, 2018 7:07:15 PM com.google.appengine.tools.development.DevAppServerImpl doStart
+INFO: Dev App Server is now running

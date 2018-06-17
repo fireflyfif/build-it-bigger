@@ -11,8 +11,6 @@ import android.widget.Toast;
 
 import com.example.android.joker.JokeLibraryActivity;
 
-import java.util.ArrayList;
-
 
 public class MainActivity extends AppCompatActivity {
 
