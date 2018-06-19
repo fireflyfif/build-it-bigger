@@ -33,19 +33,20 @@ android {
         }
     }
 
-    flavorDimensions "mode"
+    flavorDimensions "appVar"
 
     productFlavors {
         free {
-            dimension "mode"
+            dimension "appVar"
             applicationIdSuffix ".free"
         }
 
         paid {
-            dimension "mode"
+            dimension "appVar"
             applicationIdSuffix ".paid"
         }
     }
+
 }
 
 dependencies {
