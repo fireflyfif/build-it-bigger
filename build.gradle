@@ -20,3 +20,23 @@ allprojects {
         google()
     }
 }
+
+
+ext {
+    // SDK and tools
+    minSdkVersion = 16
+    targetSdkVersion = 27
+    compileSdkVersion = 27
+    buildToolsVersion = '27.0.3'
+
+    // Dependencies versions
+    supportLibraryVersion = '27.1.1'
+    playServiceVersion = '15.0.1'
+    googleClientVersion = '1.23.0'
+    findBugsVersion = '3.0.2'
+    espressoCoreVersion = '2.2.2'
+    espressoRulesVersion = '1.0.2'
+    espressoIntentsVersion = '3.0.2'
+    jUnitTestVersion = '4.12'
+    testRunnerVersion = '1.0.2'
+}

@@ -31,7 +31,6 @@
         android:background="@drawable/button_transparent_border"
         android:fontFamily="serif-monospace"
         android:gravity="center"
-        android:onClick="tellJoke"
         android:text="@string/button_text"
         android:textColor="@color/button_text"
         android:textStyle="bold" />

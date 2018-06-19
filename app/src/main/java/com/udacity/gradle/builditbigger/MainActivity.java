@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.android.joker.JokeLibraryActivity;
@@ -15,13 +16,23 @@ import com.example.android.joker.JokeLibraryActivity;
 public class MainActivity extends AppCompatActivity {
 
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
+    public static final String JOKE_KEY = "joke";
 
-    private static final String JOKE_KEY = "joke";
+    private Button mJokeGivingButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mJokeGivingButton = findViewById(R.id.joke_me_button);
+        mJokeGivingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tellJoke();
+            }
+        });
 
     }
 
@@ -47,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void tellJoke(View view) {
+    public void tellJoke() {
 
         JokerAsyncTask jokerAsyncTask = new JokerAsyncTask(getApplicationContext(),
                 new JokerAsyncTask.OnEventListener<String>() {
@@ -69,5 +80,4 @@ public class MainActivity extends AppCompatActivity {
         jokerAsyncTask.execute();
 
     }
-
 }

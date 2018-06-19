@@ -1,61 +1,54 @@
 package com.udacity.gradle.builditbigger;
 
-import android.app.Application;
+import android.support.test.espresso.intent.rule.IntentsTestRule;
 import android.support.test.runner.AndroidJUnit4;
-import android.test.ApplicationTestCase;
 
+import com.example.android.joker.JokeLibraryActivity;
+
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import java.util.concurrent.CountDownLatch;
+import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.intent.Intents.intended;
+import static android.support.test.espresso.intent.matcher.IntentMatchers.hasComponent;
+import static android.support.test.espresso.intent.matcher.IntentMatchers.hasExtra;
+import static android.support.test.espresso.matcher.ViewMatchers.withId;
+import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.not;
+import static org.hamcrest.Matchers.notNullValue;
+import static org.hamcrest.core.AllOf.allOf;
 
 // Test checking if the AsyncTask provides jokes
 // resource help: http://marksunghunpark.blogspot.com/2015/05/how-to-test-asynctask-in-android.html
 @RunWith(AndroidJUnit4.class)
-public class JokerAsyncTaskTest extends ApplicationTestCase {
+public class JokerAsyncTaskTest {
 
-    String jokeString = null;
-    Exception error = null;
-    CountDownLatch signal = null;
-
-    public JokerAsyncTaskTest() {
-        super(Application.class);
-    }
-
-    @Override
-    protected void setUp() throws Exception {
-        super.setUp();
-        signal = new CountDownLatch(1);
-    }
-
-    @Override
-    protected void tearDown() throws Exception {
-        super.tearDown();
-        signal.countDown();
-    }
+    @Rule
+    public IntentsTestRule<MainActivity> activityRule =
+            new IntentsTestRule<>(MainActivity.class);
 
     @Test
-    public void testAsyncTaskGetJokes() throws InterruptedException {
+    public void clickButton_GetsJokes() {
 
-        JokerAsyncTask task = new JokerAsyncTask(getContext(),
-                new JokerAsyncTask.OnEventListener<String>() {
-                    @Override
-                    public void onSuccess(String joke) {
-                        jokeString = joke;
-                        signal.countDown();
-                    }
+        // Wait the backend to be loaded first, before starting the test
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
-                    @Override
-                    public void onFailure(Exception e) {
-                        error = e;
-                    }
-                });
-        task.execute();
-        signal.await();
+        onView(withId(R.id.joke_me_button)).perform(click());
 
-        assertNull(error);
-        assertNotNull("joke_null", jokeString);
-        assertTrue("joke_string", !jokeString.isEmpty());
+        intended(allOf(
+                hasComponent(JokeLibraryActivity.class.getName()),
+                hasExtra(equalTo(MainActivity.JOKE_KEY), notNullValue())
+        ));
+
+        onView(withId(R.id.display_joke_tv)).check(matches(not(withText(""))));
 
     }
 }
