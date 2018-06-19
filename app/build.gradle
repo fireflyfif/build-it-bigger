@@ -21,7 +21,6 @@ android {
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
-        //versionName rootProject.version
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -33,24 +32,30 @@ android {
         }
     }
 
-    flavorDimensions "appVar"
+    flavorDimensions "mode"
 
     productFlavors {
         free {
-            dimension "appVar"
+            dimension "mode"
             applicationIdSuffix ".free"
         }
 
         paid {
-            dimension "appVar"
+            dimension "mode"
             applicationIdSuffix ".paid"
         }
     }
+}
 
+configurations {
+    all {
+        exclude module: 'httpclient'
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     endpointsServer project(path: ':backend', configuration: 'endpoints')
     implementation "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
     implementation "com.android.support:support-v4:$rootProject.supportLibraryVersion"
@@ -59,6 +64,10 @@ dependencies {
     implementation "com.google.http-client:google-http-client-android:$rootProject.googleClientVersion"
     implementation "com.google.code.findbugs:jsr305:$rootProject.findBugsVersion"
     implementation "com.android.support:cardview-v7:$rootProject.supportLibraryVersion"
+
+    // Add explicitly this library so that there are no conflicts with older versions
+    // source: https://stackoverflow.com/a/42374426/8132331
+    implementation "com.android.support:customtabs:$rootProject.supportLibraryVersion"
 
     // Dependency to the Joke supplying Java library
     implementation project(':joke')

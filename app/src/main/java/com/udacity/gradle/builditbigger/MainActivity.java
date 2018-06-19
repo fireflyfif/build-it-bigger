@@ -18,16 +18,14 @@ public class MainActivity extends AppCompatActivity {
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
     public static final String JOKE_KEY = "joke";
 
-    private Button mJokeGivingButton;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mJokeGivingButton = findViewById(R.id.joke_me_button);
-        mJokeGivingButton.setOnClickListener(new View.OnClickListener() {
+        Button jokeGivingButton = findViewById(R.id.joke_me_button);
+        jokeGivingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 tellJoke();

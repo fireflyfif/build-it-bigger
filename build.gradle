@@ -22,6 +22,8 @@ allprojects {
 }
 
 
+// Move all project dependencies versions here
+// source: https://android.jlelse.eu/gradle-how-to-manage-dependencies-8177a48d3c84
 ext {
     // SDK and tools
     minSdkVersion = 16
