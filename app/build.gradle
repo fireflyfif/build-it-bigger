@@ -63,7 +63,7 @@ dependencies {
     endpointsServer project(path: ':backend', configuration: 'endpoints')
     implementation "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
     implementation "com.android.support:support-v4:$rootProject.supportLibraryVersion"
-    implementation "com.google.android.gms:play-services-ads:$rootProject.playServiceVersion"
+    freeImplementation "com.google.android.gms:play-services-ads:$rootProject.playServiceVersion"
     implementation "com.google.api-client:google-api-client:$rootProject.googleClientVersion"
     implementation "com.google.http-client:google-http-client-android:$rootProject.googleClientVersion"
     implementation "com.google.code.findbugs:jsr305:$rootProject.findBugsVersion"
