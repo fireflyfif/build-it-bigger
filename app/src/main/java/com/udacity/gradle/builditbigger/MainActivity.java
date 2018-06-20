@@ -65,13 +65,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void tellJoke() {
 
-        // Hide the Progress Bar when the app is trying to retrieve the joke from the backend
-        mLoadingIndicator.setVisibility(View.GONE);
-
         JokerAsyncTask jokerAsyncTask = new JokerAsyncTask(getApplicationContext(),
                 new JokerAsyncTask.OnEventListener<String>() {
                     @Override
                     public void onSuccess(String joke) {
+                        // Hide the Progress Bar when the app is trying to retrieve the joke from the backend
+                        mLoadingIndicator.setVisibility(View.GONE);
 
                         Intent intent = new Intent(getApplicationContext(), JokeLibraryActivity.class);
                         intent.putExtra(JOKE_KEY, joke);

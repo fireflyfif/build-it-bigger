@@ -41,4 +41,6 @@ ext {
     espressoIntentsVersion = '3.0.2'
     jUnitTestVersion = '4.12'
     testRunnerVersion = '1.0.2'
+    googleEndpointsVersion = '2.0.9'
+    servletVersion = '2.5'
 }

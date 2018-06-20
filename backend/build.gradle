@@ -25,15 +25,15 @@ sourceCompatibility = JavaVersion.VERSION_1_7
 targetCompatibility = JavaVersion.VERSION_1_7
 
 dependencies {
-    implementation 'com.google.endpoints:endpoints-framework:2.0.9'
+    implementation "com.google.endpoints:endpoints-framework:$rootProject.googleEndpointsVersion"
     implementation 'javax.inject:javax.inject:1'
 
     // Dependency to the Joke supplying Java library
     implementation project(':joke')
 
-    implementation 'javax.servlet:servlet-api:2.5'
-    implementation 'com.google.api-client:google-api-client:1.23.0'
-    implementation 'com.google.http-client:google-http-client-android:1.23.0'
+    implementation "javax.servlet:servlet-api:$rootProject.servletVersion"
+    implementation "com.google.api-client:google-api-client:$rootProject.googleClientVersion"
+    implementation "com.google.http-client:google-http-client-android:$rootProject.googleClientVersion"
 }
 
 appengine {
