@@ -16,10 +16,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/joke_me_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/margin_16dp"
         android:fontFamily="serif-monospace"
         android:gravity="center_horizontal"
         android:text="@string/instructions"
-        android:layout_marginBottom="16dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@android:color/white" />
 
@@ -28,7 +29,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="@dimen/margin_6dp"
+        android:layout_marginTop="@dimen/button_padding_16dp"
         android:background="@drawable/button_transparent_border"
         android:fontFamily="serif-monospace"
         android:gravity="center"
@@ -44,5 +46,14 @@
         android:layout_centerHorizontal="true"
         ads:adSize="BANNER"
         ads:adUnitId="@string/banner_ad_unit_id" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="@dimen/progress_bar_dimens"
+        android:layout_height="@dimen/progress_bar_dimens"
+        android:layout_below="@+id/joke_me_button"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/margin_16dp"
+        android:visibility="visible" />
 
 </RelativeLayout>

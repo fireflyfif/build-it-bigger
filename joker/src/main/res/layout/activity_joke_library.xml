@@ -21,42 +21,45 @@
         app:cardBackgroundColor="@color/colorPrimary"
         app:cardCornerRadius="@dimen/card_view_radius">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/display_joke_tv"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/margin_20dp"
-                android:layout_marginTop="@dimen/margin_20dp"
-                android:fontFamily="serif-monospace"
-                android:padding="@dimen/padding_10dp"
-                android:text="@string/display_joke_library"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textColor="@color/colorAccent" />
+                android:orientation="vertical">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/colorAccent"
-                android:paddingTop="@dimen/padding_10dp" />
+                <TextView
+                    android:id="@+id/display_joke_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/margin_20dp"
+                    android:layout_marginTop="@dimen/margin_20dp"
+                    android:fontFamily="serif-monospace"
+                    android:padding="@dimen/padding_10dp"
+                    android:text="@string/display_joke_library"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textColor="@color/colorAccent" />
 
-            <ImageButton
-                android:id="@+id/new_joke_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:background="@android:color/transparent"
-                android:contentDescription="@string/get_new_joke"
-                android:padding="@dimen/padding_10dp"
-                android:src="@drawable/ic_autorenew_24dp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorAccent"
+                    android:paddingTop="@dimen/padding_10dp" />
 
-        </LinearLayout>
+                <ImageButton
+                    android:id="@+id/new_joke_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/get_new_joke"
+                    android:padding="@dimen/padding_10dp"
+                    android:src="@drawable/ic_autorenew_24dp" />
 
+            </LinearLayout>
+        </ScrollView>
     </android.support.v7.widget.CardView>
-
 </android.support.design.widget.CoordinatorLayout>

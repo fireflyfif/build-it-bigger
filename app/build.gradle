@@ -23,6 +23,10 @@ android {
         multiDexEnabled true
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        // Get the Local IP Address of the machine for testing the backend server on a real devices
+        // resource: http://disq.us/p/1dqd3fz
+        buildConfigField "String", "LOCAL_API", String.format('"http://%s:8080/_ah/api/"', InetAddress.getLocalHost().getCanonicalHostName())
     }
 
     buildTypes {
