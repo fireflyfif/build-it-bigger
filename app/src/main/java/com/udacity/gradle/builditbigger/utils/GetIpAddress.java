@@ -1,7 +1,6 @@
 package com.udacity.gradle.builditbigger.utils;
 
 import android.os.Build;
-import android.text.format.Formatter;
 import android.util.Log;
 
 import com.udacity.gradle.builditbigger.BuildConfig;
